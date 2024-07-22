@@ -1,6 +1,6 @@
 <x-layout>
     <div class="bg-gray-100 flex items-center justify-center min-h-screen">
-        <form method="POST" action="/note/store" class="w-full max-w-md bg-white p-6 rounded-lg shadow-md">
+        <form method="POST" action="/note" class="w-full max-w-md bg-white p-6 rounded-lg shadow-md">
             @csrf
             <div class="flex flex-col space-y-12">
                 <div class="border-b border-gray-900/10 pb-12">

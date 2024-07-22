@@ -1,5 +1,5 @@
 <x-layout>
-<div class="bg-gray-100 flex items-center justify-center min-h-screen">
+<div class="bg-gray-100 flex items-center justify-center min-h-screen" >
     <form method="POST" action="/note/{{$note->id}}" class="w-full max-w-md bg-white p-6 rounded-lg shadow-md">
         @csrf
         @method('PATCH')

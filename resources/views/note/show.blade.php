@@ -7,7 +7,7 @@
                     <p class="text-gray-800 dark:text-gray-100 font-bold">{{$note->note}}</p>
                 </div>
                 <div class="flex justify-between items-center">
-                    <x-edit-button href="/note/{{ $note->id }}/edit"> </x-edit-button>
+                    <x-edit-button href="/note/{{ $note->id }}/edit" :note="$note"> </x-edit-button>
                     <a href="/note" class="text-blue-500">Back to notes</a>
                     <span class="text-gray-600 text-sm">Created on: {{$note->created_at}}</span>
                 </div>

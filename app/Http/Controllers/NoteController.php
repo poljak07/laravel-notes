@@ -29,9 +29,18 @@ class NoteController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Note $note)
     {
-        return view('note.store');
+        request()->validate([
+            'note' => ['required', 'min:6']
+        ]);
+
+        Note::create([
+            'note' => request('note'),
+            'user_id' => 1
+        ]);
+
+        redirect('/note');
     }
 
     /**
@@ -39,7 +48,8 @@ class NoteController extends Controller
      */
     public function show(Note $note)
     {
-        return view('note.show', ['note' => $note]);
+        return view('note.show',
+            ['note' => $note]);
     }
 
     /**
@@ -55,7 +65,16 @@ class NoteController extends Controller
      */
     public function update(Request $request, Note $note)
     {
-        return 'update';
+        $request->validate([
+            'note' => ['required', 'min:6']
+        ]);
+
+        $note->update([
+            'note' => request('note'),
+            'user_id' => 1
+        ]);
+
+        return redirect('/note/' . $note->id);
     }
 
     /**
@@ -63,7 +82,9 @@ class NoteController extends Controller
      */
     public function destroy(Note $note)
     {
-        return 'destroy';
+
+        $note->delete();
+        return redirect('/note');
 
     }
 }
