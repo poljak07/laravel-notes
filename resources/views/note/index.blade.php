@@ -5,7 +5,7 @@
             @foreach($notes as $note)
                 <x-note-card :note="$note">
                     <a
-                        href="/note/{{$note->id}}">
+                        href="{{ route('note.show', $note) }}">
                         {{ $note->note }}
                 </a>
             </x-note-card>
