@@ -23,6 +23,6 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('password123')
         ]);
 
-        Note::factory(10)->create();
+        Note::factory(50)->create();
     }
 }

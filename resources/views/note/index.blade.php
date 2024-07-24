@@ -11,6 +11,8 @@
             </x-note-card>
                 @endforeach
 
+            {{ $notes->links() }}
+
 
 
 </div>
